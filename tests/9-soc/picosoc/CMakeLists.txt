@@ -198,7 +198,7 @@ foreach(FREQ ${NEXYS_VIDEO_FREQS})
     )
 
     add_vivado_target(
-        NAME picosoc_nexys_video_${FREQ}_vivado
+        NAME picosoc_nexys_video_mid_${FREQ}_vivado
         PARENT_NAME picosoc_nexys_video_${FREQ}
         CLOCK_PINS clk
         CLOCK_PERIODS ${PERIOD}
