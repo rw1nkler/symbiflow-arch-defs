@@ -19,7 +19,6 @@
 #
 import os
 import sys
-import shutil
 sys.path.insert(0, os.path.abspath('.'))
 
 from collectors import ArchsCollector, ModelsCollector
@@ -221,7 +220,13 @@ hdl_diagram_yosys = "system"
 # --- Generated Sources ------------------------------------------------------
 
 repo_root = os.path.realpath("../../")
-shutil.rmtree("generated", ignore_errors=True)
+
+# The generated directory deletion has been added to the Makefile for local use
+# On RTD server it is not necessary. Removing any directory from the config
+# file result in a infinit loop of sphinx-livehtml
+#
+# import shutil
+# shutil.rmtree("generated", ignore_error
 
 mc = ModelsCollector(repo_root)
 ac = ArchsCollector(repo_root)
@@ -242,6 +247,3 @@ ecp5_generatedir = os.path.realpath("generated/ecp5/models")
 ecp5_search = ["ecp5/primitives"]
 ecp5_skip_diagrams = ["BB", "CCU2C", "OBZ", "TRELLIS_IO", "sb_pio"]
 mc.generate_docs(ecp5_generatedir, ecp5_search, ecp5_skip_diagrams)
-
-
-
