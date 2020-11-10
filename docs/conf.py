@@ -21,6 +21,14 @@ import os
 import sys
 sys.path.append(os.path.abspath("./_ext"))
 
+
+import subprocess
+subprocess.run("pip3 list", shell=True)
+subprocess.run("which pip", shell=True)
+subprocess.run("which pip3", shell=True)
+subprocess.run("which python", shell=True)
+subprocess.run("which python3", shell=True)
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.

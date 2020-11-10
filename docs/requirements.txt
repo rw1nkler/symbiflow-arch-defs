@@ -4,3 +4,5 @@ sphinxcontrib_hdl_diagrams
 sphinxcontrib-images
 symbolator
 Jinja2
+
+doxygen-interface
